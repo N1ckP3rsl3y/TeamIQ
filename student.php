@@ -1,29 +1,45 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
     <head>
-        <link rel="stylesheet" href="student.css">
-        <script defer src="questions.js"></script>
-        <script src="https://code.jquery.com/jquery-latest.js"></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <title>Red Pen</title>
     </head>
-
     <body>
-        <form method="POST" id="formID">
-        <div id="attemptSection">
-            <?php
-                require_once("getAttempts.php");
-            ?>
-        </div>
-        <div>
-            <?php
-                require_once("getQuestions.php");
-            ?>
-        </div>
-        <div id="explanationSection">
-            <?php
-                require_once("getExplanation.php");
-            ?>
-        </div>
-        <form>
+        <!-- Header Section -->
+        <header class="fixed-header">
+        <a href="index.html"> 
+            <img src="photos/nau.png" alt="Logo" width="200" height="125">
+        </a>
+        <img src="photos/Red Pen.png" alt="Logo" width="425" height="125">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="quizzes.html">Quizzes</a></li>
+                <!-- <li><a href="">Login</a></li> -->
+            </ul>
+        </nav>
+        </header>
+
+         <!-- Main Content Section -->
+         <mainPage>
+            <div class="background-container" >
+                <img src="photos/red-pen-background.png" alt="Red Pen">
+                <div class="centered-text">
+                    <h1>Welcome to Red Pen!</h1>
+                    <p > 
+                    </p>
+                    <a href="quizzes.html" class="login-button">Quizzes</a>
+                    <!-- <a href="" class="login-button">Login</a> -->
+                </div>
+            </div>
+        </mainPage>
+
+        <!-- Footer Section -->
+        <footer>
+            <p>Red Pen</p>
+            <p>&copy; 2024</p>
+        </footer>
     </body>
 </html>

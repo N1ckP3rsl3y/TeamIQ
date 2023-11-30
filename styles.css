@@ -1,0 +1,280 @@
+
+main {
+   margin-top: 150px; 
+   padding: 20px;
+   flex-grow: 1;
+   display: flex;
+   flex-direction: column;
+   align-items: center; 
+   justify-content: center; 
+   overflow-y: auto;
+}
+
+mainPage {
+   margin-top: 150px; 
+   padding: 20px;
+   flex-grow: 1;
+   display: flex;
+   flex-direction: column;
+   overflow-y: auto;
+}
+
+.fixed-header {
+   background-color: rgb(230, 218, 151);
+   color: black;
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: 25px 25px; 
+   z-index: 100; 
+}
+
+/* Style the content wrapper */
+.content-wrapper {
+   margin: 0 auto; 
+   max-width: 800px; 
+   flex-grow: 1; 
+}
+
+/* Style the footer */
+footer {
+   background-color: rgb(230, 218, 151);
+   color: rgb(29, 29, 150);
+   text-align: center;
+   padding: 50px 0; 
+   flex-shrink: 0;
+}
+
+/* Apply basic styles for the container */
+.image-text-container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 10px;
+}
+
+/* Style the grey background wrapper */
+.grey-background {
+   display: flex; 
+   background-color: #f2f2f2; /* Light grey background color */
+   padding: 15px;
+   border-radius: 5px;
+   align-items: center;
+   margin-right: 80px;
+   margin-left: 80px;
+   position: relative;
+}
+
+/* Style the image */
+.grey-background img {
+   height: 300px;
+   width: 400px;
+   height: auto;
+   margin-left: 20px;
+}
+
+/* Style the header */
+.text-content .role {
+   font-size: 24px;
+   font-weight: bold;
+   margin-bottom: 5px;
+   text-align: center;
+}
+
+/* Style the description text */
+.text-content .description {
+   font-size: 16px;
+   margin-left: 20px;
+}
+
+/* Center the image */
+.text-content img {
+   display: block;
+   margin: 0 auto; /* Center the image horizontally */
+   height: 100px;
+   width: 200px;
+   height: auto;
+   margin-top: 20px; /* Add margin to separate the image from text */
+}
+
+.background-container {
+   position: relative;
+   text-align: center;
+   color: rgb(29, 29, 150);
+   font-size: 24px;
+   height: 80vh;
+   margin: 0;
+   padding-top: 2.5%;
+   border: none;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.background-container img {
+   width: 100%; 
+   height: 100%; 
+   object-fit: cover; 
+}
+
+.centered-text {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   text-align: center;
+   z-index: 1; /* Ensure it's on top of the background image */
+   padding: 20px;
+   background-color: rgba(0, 0, 0, 0.7);
+   color: #fff;
+   border-radius: 10px;
+}
+
+/* Add these properties to make it responsive */
+@media (max-width: 768px) {
+   .centered-text {
+       width: 90%;
+       padding: 10px;
+       font-size: 18px;
+   }
+}
+
+.centered-text h1 {
+   font-size: 38px; 
+   font-weight: bold;
+   color: white; 
+   margin: 0;
+   padding: 10px; /* Add padding to the text */
+   text-align: center;
+}
+
+.centered-text p {
+   font-size: 24px; 
+   color: white;
+   margin: 0; 
+   padding: 10px;
+   text-align: center;
+}
+
+.login-button {
+   display: inline-block;
+   padding: 15px 30px; 
+   background-color: rgba(0, 123, 255, 0.7); /* Slightly transparent blue */
+   color: white;
+   text-decoration: none;
+   border: 2px solid rgb(230, 218, 151);
+   border-radius: 5px;
+   font-weight: bold;
+   transition: background-color 0.3s ease;
+   margin-top: 20px; /* Add margin to separate from text */
+   font-size: 18px;
+}
+
+.login-button:hover {
+   background-color: rgb(29, 29, 150); /* Darker blue on hover */
+}
+
+.instructions {
+   text-align: center;
+   background-color: #ffc;
+   font-weight: 400;
+   margin: 30px 500px;
+}
+
+.quiz {
+   padding: 50px;
+   border: 2px solid #000;
+   margin: 0px 500px;
+}
+
+.quiz-questions {
+   text-align: left;
+}
+
+
+#progress {
+   display: flex;
+   margin-bottom: 10px;
+}
+
+#progress .pen {
+   font-size: 24px;
+   margin-right: 5px;
+}
+
+#penButton {
+   font-size: 24px;
+}
+
+#questionCount {
+   display: block;
+   margin-bottom: 10px;
+}
+
+/* Reset margin and padding for the whole page */
+body {
+   margin: 0;
+   padding: 0;
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh;
+}
+
+.logo img {
+   max-height: 60px; 
+}
+
+nav ul {
+   list-style: none;
+   padding: 0;
+   margin: 0;
+   display: flex;
+}
+
+nav li {
+   margin-right: 20px;
+}
+
+/* Add margin to the last li element */
+nav li:last-child {
+   margin-right: 70px; 
+}
+
+nav a {
+   text-decoration: none;
+   color: rgb(29, 29, 150);
+}
+
+#remindersContainer {
+   width: 300px;
+   padding: 20px;
+   box-shadow: 0 2px 8px red;
+   border-radius: 10px;
+}
+
+#remindersContainer h1 {
+   text-align: center;
+   color: black;
+}
+
+#remindersContainer ul {
+   list-style-type: none;
+   padding: 0;
+}
+
+#remindersContainer li {
+   margin-bottom: 10px;
+   padding: 15px;
+   background-color: #fff;
+   border-radius: 8px;
+   transition: background-color 0.3s ease;
+}
+
+#remindersContainer li:hover {
+   background-color: #f5f5f5;
+}
+
