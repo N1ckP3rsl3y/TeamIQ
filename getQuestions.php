@@ -11,7 +11,7 @@
     $result = mysqli_query($conn, $sql);
 
     while ($row = mysqli_fetch_assoc($result) and
-           $qNum <= $maxNumQuestions)
+           $qNum < $maxNumQuestions)
     {
         $questionArea = "<div id='question'>\n";
 
