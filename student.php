@@ -7,6 +7,8 @@
         <title>Red Pen</title>
         <script defer src="questions.js"></script>
         <script src="https://code.jquery.com/jquery-latest.js"></script>
+        <script defer src="questions.js"></script>
+        <script defer src="checkAttempts.js"></script>
     </head>
 
     <body>
