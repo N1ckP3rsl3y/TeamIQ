@@ -3,13 +3,17 @@
 
     $conn = connectToDatabase();
 
-    $question = $_REQUEST['question'];
-    $position = 1;
-    $explanation = $_REQUEST['explanation'];
+    $question = $_POST['question'];
+    $position = $_POST['answerPosition'];
+    $explanation = $_POST['explanation'];
+    
+    //renderString($question);
+    
+    $sql = sprintf("INSERT INTO quizOne VALUES ('%s', '%d', '%s')",
+                   $question, $position, $explanation);
 
-    $sql = "INSERT INTO quizOne VALUES ('$question', '$position', '$explanation')";
 
-    $insertVal = mysqli_query($conn, $sql);
+    mysqli_query($conn, $sql);
 
     mysqli_close($conn);
 ?>

@@ -24,33 +24,39 @@
             </ul>
         </nav>
         </header>
-
         <main>
+            <?php
+                if(isset($_POST['question']) and
+                   isset($_POST['answerPosition']) and
+                   isset($_POST['explanation']))
+                {
+                    require_once("insertQuestions.php");
+                }
+            ?>
             <div class="instructions">
-                <p>Please find the error in the sentence below.
-                You don't have to explain the error or fix it; just click on
-                the part you think is wrong. If I agree, you'll see my
-                explanation. If you're off base, try again.
+                <p>
+                    Create your quiz question
                 </p>
             </div>
-
             <form method="POST" id="formID">
-            <p>
-            <label for="quizQuestion">Question</label>
-            <input type="text" id="quizQuestion" name="question" placeholder="Insert text here...">
-            </p>
-            <p>
-            <label for="quizExplanation">Explanation</label>
-            <input type="text" id="quizExplanation" name="explanation" placeholder="Insert text here...">
-            </p>
-            <input type="submit" value="Submit">
-            <div>
-                <?php
 
-                    require_once("insertQuestions.php");
-                ?>
-            </div>
-            <form>
+                <label for="quizQuestion">Enter a sentence</label><br>
+                <textarea type="text" id="quizQuestion" name="question"
+                    placeholder="sentence goes here"rows="5" cols="22"></textarea><br><br>
+
+                <label for="incorrectWord">Enter incorrect word number</label><br>
+                <input type="text" id="incorrectWord" name="answerPosition"
+                    placeholder="'1'"/><br><br>
+
+                <label for="quizExplanation">Explanation</label><br>
+                <textarea type="text" id="quizExplanation" name="explanation"
+                    placeholder="Enter an explanation on why this word shouldn't be there"rows="5" cols="22"></textarea><br>
+
+                <input type="submit" value="Submit"/>
+                <div>
+                    
+                </div>
+            </form>
         </main>
 
         <!-- Footer Section -->
