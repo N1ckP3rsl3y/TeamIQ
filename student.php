@@ -7,14 +7,12 @@
         <title>Red Pen</title>
         <script defer src="questions.js"></script>
         <script src="https://code.jquery.com/jquery-latest.js"></script>
-        <script defer src="questions.js"></script>
-        <script defer src="checkAttempts.js"></script>
     </head>
 
     <body>
          <!-- Header Section -->
          <header class="fixed-header">
-        <a href="index.html">
+        <a href="index.html"> 
             <img src="photos/nau.png" alt="Logo" width="200" height="125">
         </a>
         <img src="photos/Red Pen.png" alt="Logo" width="425" height="125">
@@ -26,12 +24,12 @@
             </ul>
         </nav>
         </header>
-
+        
         <main>
             <div class="instructions">
-                <p>Please find the error in the sentence below.
-                You don't have to explain the error or fix it; just click on
-                the part you think is wrong. If I agree, you'll see my
+                <p>Please find the error in the sentence below. 
+                You don't have to explain the error or fix it; just click on 
+                the part you think is wrong. If I agree, you'll see my 
                 explanation. If you're off base, try again.
                 </p>
             </div>
@@ -40,7 +38,6 @@
                 <?php
                     require_once("getAttempts.php");
                 ?>
-                <a class="giveupButton" hidden="true"> Give Up?</a>
             </div>
             <div>
                 <?php

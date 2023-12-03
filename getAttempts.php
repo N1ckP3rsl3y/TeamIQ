@@ -12,7 +12,7 @@
     {
         echo "<p>";
         echo $row["quiz_1_q1"];
-        echo " tries</p>";
+        echo " attempt(s)</p>";
     }
 
     mysqli_close($conn);

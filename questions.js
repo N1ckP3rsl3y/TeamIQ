@@ -1,16 +1,9 @@
-const NUM_ATTEMPTS_BEFORE_GIVEUP = 3;
-
-let questionAttempts = [];
-let questionList = [];
-
 /**
  * Once the window loads, all the event listeners for clicking words
  */
 window.onload = () =>
 {
     setupEventListeners();
-
-    console.log(questionList);
 }
 
 /**
@@ -23,11 +16,9 @@ function queryDatabase()
       type: 'POST',
       url: 'updateAttempt.php',
       data: {
-        // Left empty on purpose
       },
-      success: function(data)
-      {
-        let dataWithAttemptsStr = injectTriesString(data);
+      success: function(data) {
+        let dataWithAttemptsStr = injectAttemptsString(data);
         document.getElementById("attemptSection").innerHTML = dataWithAttemptsStr;
       }
     });
@@ -43,10 +34,8 @@ function checkAnswer(event, question, clickedWord)
         type: 'POST',
         url: 'getAnswer.php',
         data: {
-            // Left empty on purpose
         },
-        success: function(data)
-        {
+        success: function(data) {
             if(isCorrectAnswer(data, question, clickedWord))
             {
                 // Get question and answer explanation section of HTML
@@ -58,34 +47,6 @@ function checkAnswer(event, question, clickedWord)
                 qSec.setAttribute("class", qSec.className + " disabled");
                 qExplanationSec[0].style.visibility = "visible";
             }
-            else
-            {
-                var qIndex = questionList.indexOf(question, 0);
-                questionAttempts[qIndex] += 1;
-
-                if(questionAttempts[qIndex] == NUM_ATTEMPTS_BEFORE_GIVEUP)
-                {
-                    // Show the button
-                }
-            }
-        }
-    });
-}
-
-/**
- * Update a specific students "give up" attempt on the database
- */
-function updateGiveUpAttempt()
-{
-    $.ajax({
-        type: 'POST',
-        url: 'updateGiveUp.php',
-        data: {
-            // Left empty on purpose
-        },
-        success: function(data)
-        {
-            // Left empty for future additions
         }
     });
 }
@@ -105,16 +66,16 @@ function isCorrectAnswer(data, question, clickedWord)
 }
 
 /**
- * Inject the string "tries" into the attempts portion of the HTML
+ * Inject the string "attempt(s)" into the attempts portion of the HTML
  * by deconstructing the "data" string and reconstructing it
  */
-function injectTriesString(data)
+function injectAttemptsString(data)
 {
     var strippedStr = data.replace("</p>", "");
     var finalStr = "<p>";
 
     finalStr += strippedStr;
-    finalStr += " tries";
+    finalStr += " attempt(s)";
     finalStr += "</p>";
 
     return finalStr;
@@ -153,21 +114,15 @@ function stripHTML(string)
 }
 
 /**
- * Set up all event listeners (wait for a click)
+ * Go through all clickable words and attach event listeners to them
  */
 function setupEventListeners()
 {
     var wordElements = document.querySelectorAll(".wordChoice");
-    var giveUpButtons = document.querySelectorAll(".giveupButton");
-    var giveUpButton, wordElement;
-    var strippedQuestion;
-    var index;
 
-    for(index = 0; index < wordElements.length; index++)
+    wordElements.forEach((element) =>
     {
-        wordElement = wordElements[index];
-
-        wordElement.addEventListener('click', function(event)
+        element.addEventListener('click', function(event)
         {
             // Make sure the word is clickable (see the function
             // definition for more description)
@@ -185,22 +140,7 @@ function setupEventListeners()
                 event.target.setAttribute("class", event.target.className + " disabled");
             }
         });
-    }
-
-    for(index = 0; index < giveUpButtons.length; index++)
-    {
-        giveUpButton = giveUpButtons[index];
-        strippedQuestion = stripHTML(giveUpButton.innerHTML);
-        questionList.push(giveUpButton.innerHTML);
-
-        giveUpButton.addEventListener('click', function(event)
-        {
-            updateGiveUpAttempt();
-
-            // Add a new attempt total for individual questions
-            questionAttempts.push(0);
-        })
-    }
+    });
 }
 
 /**
