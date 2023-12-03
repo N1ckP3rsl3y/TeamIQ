@@ -278,11 +278,3 @@ nav a {
    background-color: #f5f5f5;
 }
 
-.giveupButton {
-   text-decoration: none;
-   cursor: pointer;
-}
-
-.giveupButton:hover {
-   text-decoration: underline;
-}
