@@ -66,6 +66,7 @@ function checkAnswer(event, question, clickedWord)
                 if(questionAttempts[qIndex] == NUM_ATTEMPTS_BEFORE_GIVEUP)
                 {
                     // Show the button
+                    $('.giveupButton').show();
                 }
             }
         }
