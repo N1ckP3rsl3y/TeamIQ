@@ -21,6 +21,7 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="quizzes.html">Quizzes</a></li>
+                <li><a href="quizEditor.php">Quiz Editor</a></li>
                 <!-- <li><a href="">Login</a></li> -->
             </ul>
         </nav>
