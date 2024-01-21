@@ -1,6 +1,6 @@
 # TeamIQ
 
-**Version:** v1.0.0-alpha-demo
+**Version:** v0.1.0 (alpha-demo)
 
 # RedPen
 ## Overview
