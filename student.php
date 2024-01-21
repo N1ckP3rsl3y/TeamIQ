@@ -28,30 +28,36 @@
         </header>
 
         <main>
-            <div class="instructions">
-                <p>Please find the error in the sentence below.
-                You don't have to explain the error or fix it; just click on
-                the part you think is wrong. If I agree, you'll see my
-                explanation. If you're off base, try again.
-                </p>
-            </div>
-            <form method="POST" class="quiz">
-            <div id="attemptSection">
-                <?php
-                    require_once("getAttempts.php");
-                ?>
-                <a class="giveupButton" hidden="true"> Give Up?</a>
-            </div>
-            <div>
-                <?php
-                    require_once("getQuestions.php");
-                ?>
-            </div>
-            <div id="explanationSection">
-                <?php
-                    require_once("getExplanation.php");
-                ?>
-            </div>
+                <div class="instructions">
+                    <p>Please find the error in the sentence below.
+                    You don't have to explain the error or fix it; just click on
+                    the part you think is wrong. If I agree, you'll see my
+                    explanation. If you're off base, try again.
+                    </p>
+                </div>
+                <form method="POST" class="quiz">
+                <div class="question1">
+                    <button id="penButton"> 🖍️ </button>
+                    <p><strong>Question: 1</strong></p>
+                    <!-- Inject the questions for the current quiz -->
+                    <?php
+                        require_once("getQuestions.php");
+                    ?>
+                    <div id="attemptSection">
+                        <?php
+                            require_once("getAttempts.php");
+                        ?>
+                    </div>
+                    <div style="display: none;" id="giveUpWrapper">
+                        <div style="display: inline-block;">&emsp;&emsp;</div>
+                        <a class="giveupButton">Give Up?</a>
+                    </div>
+                    <div id="explanationSection">
+                        <?php
+                            require_once("getExplanation.php");
+                        ?>
+                    </div>
+                </div>
             </form>
         </main>
 

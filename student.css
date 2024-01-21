@@ -25,12 +25,14 @@ a:hover.wordChoice:not(.disabled)
     padding-top: 1%;
 }
 
-#formID > #attemptSection
+#attemptSection
 {
     text-align: right;
+    display: inline-block;
 }
 
 #explanationSection
 {
     visibility: hidden;
 }
+

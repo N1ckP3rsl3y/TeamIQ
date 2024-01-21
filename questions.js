@@ -1,7 +1,11 @@
-const NUM_ATTEMPTS_BEFORE_GIVEUP = 3;
+/* Constants */
+var GIVEUP_INDEX = 4;
+var QUESTION_INDEX = 2;
+var NUM_ATTEMPTS_BEFORE_GIVEUP = 3;
 
-let questionAttempts = [];
-let questionList = [];
+/* Global information */
+var questionAttempts = [];
+var giveups = [];
 
 /**
  * Once the window loads, all the event listeners for clicking words
@@ -9,8 +13,6 @@ let questionList = [];
 window.onload = () =>
 {
     setupEventListeners();
-
-    console.log(questionList);
 }
 
 /**
@@ -27,11 +29,27 @@ function queryDatabase()
       },
       success: function(data)
       {
-        let dataWithAttemptsStr = injectTriesString(data);
+        var dataWithAttemptsStr = injectTriesString(data);
         document.getElementById("attemptSection").innerHTML = dataWithAttemptsStr;
       }
     });
 };
+
+/**
+ * Disable the choices within a given question
+ */
+function disableQuestion(event, userGaveUp)
+{
+    // Get question and answer explanation section of HTML
+    var giveUpQSec = event.target.parentElement.parentNode.children[QUESTION_INDEX];
+    var qSec = (userGaveUp) ? giveUpQSec : event.target.parentElement;
+    var formSec = qSec.parentElement.parentElement;
+    var qExplanationSec = formSec.querySelectorAll("#explanationSection");
+
+    // Disable the question section and show the answer explanation
+    qSec.setAttribute("class", qSec.className + " disabled");
+    qExplanationSec[0].style.visibility = "visible";
+}
 
 /**
  * Check to see if a clicked word is the correct answer
@@ -49,24 +67,17 @@ function checkAnswer(event, question, clickedWord)
         {
             if(isCorrectAnswer(data, question, clickedWord))
             {
-                // Get question and answer explanation section of HTML
-                var qSec = event.target.parentElement;
-                var formSec = qSec.parentElement.parentElement;
-                var qExplanationSec = formSec.querySelectorAll("#explanationSection");
-
-                // Disable the question section and show the answer explanation
-                qSec.setAttribute("class", qSec.className + " disabled");
-                qExplanationSec[0].style.visibility = "visible";
+                disableQuestion(event, false);
             }
             else
             {
-                var qIndex = questionList.indexOf(question, 0);
+                var qIndex = getQuestionNum(event) - 1;
                 questionAttempts[qIndex] += 1;
 
-                if(questionAttempts[qIndex] == NUM_ATTEMPTS_BEFORE_GIVEUP)
+                if(questionAttempts[qIndex] === NUM_ATTEMPTS_BEFORE_GIVEUP)
                 {
                     // Show the button
-                    $('.giveupButton').show();
+                    showQuestionGiveUpButton(event);
                 }
             }
         }
@@ -76,17 +87,22 @@ function checkAnswer(event, question, clickedWord)
 /**
  * Update a specific students "give up" attempt on the database
  */
-function updateGiveUpAttempt()
+function updateGiveUpAttempt(event)
 {
     $.ajax({
         type: 'POST',
-        url: 'updateGiveUp.php',
+        url: 'attemptGiveUp.php',
         data: {
             // Left empty on purpose
         },
         success: function(data)
         {
-            // Left empty for future additions
+            var qNum = getQuestionNum(event) - 1;
+            if(giveups[qNum] == 0)
+            {
+                disableQuestion(event, true);
+                giveups[qNum]++;
+            }
         }
     });
 }
@@ -127,12 +143,12 @@ function injectTriesString(data)
  */
 function stripHTML(string)
 {
-    let strippedString = "";
-    let endTag = false;
+    var strippedString = "";
+    var endTag = false;
 
     // Loop through string and capture the characters between
     // the close and open tags (detected by '>' and '<', repectively)
-    for(let index = 0; index < string.length; index++)
+    for(var index = 0; index < string.length; index++)
     {
         if(string[index] == '>')
         {
@@ -161,7 +177,6 @@ function setupEventListeners()
     var wordElements = document.querySelectorAll(".wordChoice");
     var giveUpButtons = document.querySelectorAll(".giveupButton");
     var giveUpButton, wordElement;
-    var strippedQuestion;
     var index;
 
     for(index = 0; index < wordElements.length; index++)
@@ -191,16 +206,15 @@ function setupEventListeners()
     for(index = 0; index < giveUpButtons.length; index++)
     {
         giveUpButton = giveUpButtons[index];
-        strippedQuestion = stripHTML(giveUpButton.innerHTML);
-        questionList.push(giveUpButton.innerHTML);
 
         giveUpButton.addEventListener('click', function(event)
         {
-            updateGiveUpAttempt();
-
-            // Add a new attempt total for individual questions
-            questionAttempts.push(0);
+            updateGiveUpAttempt(event);
         })
+
+        // Add or reset an attempt total/giveups for individual questions
+        questionAttempts.push(0);
+        giveups.push(0);
     }
 }
 
@@ -216,4 +230,29 @@ function canClickWord(event)
 
     return !questionSec.className.includes("disabled") &&
            !currWord.className.includes("disabled");
+}
+
+/**
+ * Get the respective "attempt" section when a word is clicked
+ * in a question
+ */
+function getQuestionNum(wordElement)
+{
+    let qClass = wordElement.target.parentElement.parentElement.className;
+
+    // Strip the question class of any characters (get the number)
+    let qNumber = qClass.replace("question", "");
+
+    return parseInt(qNumber);
+}
+
+/**
+ *  Show the give up button for a specific question
+ */
+function showQuestionGiveUpButton(event)
+{
+    let qSection = event.target.parentNode.parentNode;
+    let qAttSection = qSection.children[GIVEUP_INDEX];
+
+    qAttSection.setAttribute("style", "display: inline-block;");
 }
