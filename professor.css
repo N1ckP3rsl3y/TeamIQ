@@ -1,3 +1,166 @@
 .attempt {
     text-align: center;
 }
+
+.container {
+    max-width: 580px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.header {
+    background-color: #f0f0f0;
+    padding: 20px; 
+    width: 491px;
+    border-radius: 10px 10px 0px 0px;
+    justify-content: space-around;
+}
+
+.title-box {
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-around;
+    padding: 25px;
+    width: 479px;
+    border: 1px solid #ccc;
+    border-radius: 0 0 10px 10px;
+}
+
+.box {
+    width: 200px;
+    height: 100px;
+    background-color: #007bff;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin: 20px;
+}
+
+.box:hover {
+    background-color: #0056b3;
+}
+
+.left-box, .right-box, .middle-box {
+    width: calc(33.33% - 10px);
+    margin-bottom: 20px;
+}
+
+.right-box {
+    padding-top: 20px;
+}
+
+.by-student, .by-quiz {
+    margin-bottom: 20px;
+}
+
+.by-quiz label {
+    margin-right: 10px;
+}
+
+.by-quiz select {
+    padding: 5px;
+}
+
+.go-footer {
+    padding: 20px;
+}
+
+.footer {
+    margin-top: 20px;
+}
+
+.go-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.go-button:hover {
+    background-color: #0056b3;
+}
+
+/* Added by Robin */
+
+.download-button {
+    display: none;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.download-section {
+    text-align: center;
+    font-size: large;
+    width: 100%;
+    margin-top: 20px;
+    padding-top: 2px;
+}
+
+.download-button:hover {
+    background-color: #0056b3;
+}
+
+.chart_container {
+    width: 640px;
+    height: auto;
+    padding-top: 20px;
+}
+
+.boxtwo {
+    width: 75px;
+    height: 50px;
+    background-color: #007bff;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin: 20px;
+    
+}
+
+.boxtwo:hover {
+    background-color: #0056b3;
+}
+
+.error-section {
+    text-align: center;
+    font-size: large;
+    width: 100%;
+    margin-top: 20px;
+    border-top: 1px solid black;
+    padding-top: 10px;
+}
+
+.alumn
+{
+   width: 200px;
+   height: 30px;
+   font-size: medium;
+   justify-content: center;
+   align-items: center;
+   transition: background-color 0.3s ease;
+   margin: 20px;
+}
