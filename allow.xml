@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <document>
+    <nauauthz>
+      <user>
+        <name>nau</name>
+        <value>*</value>
+      </user>
+      <logic>(nau)</logic>
+    </nauauthz>
+  </document>

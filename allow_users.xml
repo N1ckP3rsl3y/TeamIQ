@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <document>
+    <nauauthz>
+      <user>
+        <name>nau_admin</name>
+        <value>slb32</value>
+        <value>cwb32</value>
+      </user>
+      <user>
+        <name>redpen_prof</name>
+        <value>Erika.Konrad</value>
+      </user>
+      <user>
+        <name>redpen_users</name>
+        <value>lms737</value>
+        <value>eez9</value>
+        <value>sdp243</value>
+        <value>kvk23</value>
+      </user>
+      <logic>(|(nau_admin)(redpen_users)(redpen_prof))</logic>
+    </nauauthz>
+  </document>

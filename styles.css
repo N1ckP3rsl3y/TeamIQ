@@ -1,7 +1,7 @@
 
 main {
    margin-top: 150px; 
-   padding: 20px;
+   padding: 50px;
    flex-grow: 1;
    display: flex;
    flex-direction: column;
@@ -29,7 +29,7 @@ mainPage {
    display: flex;
    align-items: center;
    justify-content: space-between;
-   padding: 25px 25px; 
+   padding: 20px 20px; 
    z-index: 100; 
 }
 
@@ -175,7 +175,7 @@ footer {
 }
 
 .login-button:hover {
-   background-color: rgb(29, 29, 150); /* Darker blue on hover */
+   background-color: rgb(29, 29, 150); 
 }
 
 .instructions {
@@ -183,12 +183,17 @@ footer {
    background-color: #ffc;
    font-weight: 400;
    margin: 30px 500px;
+   font-size: large;
+}
+
+.quiz-editor {
+   text-align: center;
 }
 
 .quiz {
    padding: 50px;
    border: 2px solid #000;
-   margin: 0px 500px;
+   margin: 0px 400px;
 }
 
 .quiz-questions {
@@ -250,9 +255,9 @@ nav a {
 }
 
 #remindersContainer {
-   width: 300px;
+   width: 375px;
    padding: 20px;
-   box-shadow: 0 2px 8px red;
+   box-shadow: 0 2px 8px;
    border-radius: 10px;
 }
 
@@ -285,4 +290,263 @@ nav a {
 
 .giveupButton:hover {
    text-decoration: underline;
+}
+
+#QuizContainer {
+   width: 70%;
+   height: 10%;
+   /* box-shadow: 0 2px 8px blueviolet; */
+   border-radius: 10px;
+   margin-bottom: 10%;
+   float: left;
+}
+
+#QuizContainer h2 {
+   text-align: left;
+   color: black;
+}
+
+#QuizContainer ul {
+   list-style-type: none;
+   padding: 0;
+}
+
+#QuizContainer li {
+   margin-bottom: 10px;
+   padding: 15px;
+   background-color: #fff;
+   border-radius: 8px;
+   transition: background-color 0.3s ease;
+}
+
+#QuizContainer li:hover {
+   background-color: #f5f5f5;
+}
+
+#sample {
+   width: 10%;
+   height: 10%;
+   margin-bottom: 10px;
+   margin-right: 10px;
+   /* box-shadow: 0 2px 8px red; */
+   border-radius: 10px;
+   float: right
+    
+
+}
+
+#sample h1{
+   font-size: 20px;
+}
+
+#QuestionContainer {
+   width: 60%;
+   height: 5%;
+   /* box-shadow: 0 2px 8px blueviolet; */
+   border-radius: 10px;
+   margin-bottom: 10%;
+   float: left;
+}
+
+#QuestionContainer h3 {
+   text-align: left;
+   color: black;
+}
+
+
+
+#QuestionContainer li {
+   margin-bottom: 10px;
+   padding: 15px;
+   background-color: #fff;
+   border-radius: 8px;
+   transition: background-color 0.3s ease;
+}
+
+#QuestionContainer li:hover {
+   background-color: #f5f5f5;
+}
+
+#edit {
+    width: 25%;
+    height: 25%;
+    margin-bottom: 10px;
+    /* box-shadow: 0 2px 8px blue; */
+    border-radius: 10px;
+    float: right;
+    /* margin-right: 10px; */
+    /* margin-left: 10px; */
+}
+
+#edit h1{
+   font-size: 12px;
+}
+
+#remove {
+    width: 25%;
+    height: 25%;
+    margin-bottom: 10px;
+    /* box-shadow: 0 2px 8px red; */
+    border-radius: 10px;
+    float: right
+    
+
+}
+
+#remove h1{
+   font-size: 12px;
+}
+
+#plus{
+   width: 45px;
+   height: 45px;
+   /* box-shadow: 0 2px 8px #9b870c; */
+   border-radius: 10px;
+   margin-bottom: 5%;
+   float: right;
+   margin-left: 7px;
+}
+
+#plus h3 {
+   text-align: center;
+   color: black;
+   font-size: 14px;
+}
+
+.tag_card {
+   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+   transition: 0.3s;
+   width: 100%; 
+   border-radius: 5px;
+   height: 200px;
+   padding-bottom: 50px;
+   
+ }
+ 
+ .tag_card:hover {
+   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+ }
+ 
+ .tag_container {
+   padding: 2px 16px;
+ }
+
+ #main_tag_container {
+   width: auto;
+   flex-direction: row;
+   display: grid;
+   grid-template-columns: repeat(3, 180px);
+   row-gap: 30px;
+   justify-content: space-evenly;
+   padding-bottom: 10px;
+   
+ }
+
+ #main_tag_container h1 {
+   padding-right: 10px;
+   color: black;
+}
+
+#main_tag_container ul {
+   list-style-type: none;
+   padding: 0;
+}
+
+#main_tag_container li {
+   margin-bottom: 10px;
+   padding: 15px;
+   background-color: #fff;
+   border-radius: 8px;
+   transition: background-color 0.3s ease;
+}
+
+#main_tag_container li:hover {
+   background-color: #f5f5f5;
+}
+
+#tagPageContainer {
+   width: 700px;
+   padding: 20px;
+   box-shadow: 0 2px 8px;
+   border-radius: 10px;
+   margin-top: 20px;
+}
+
+#tagPageContainer h1 {
+   text-align: center;
+   color: black;
+}
+
+#tagPageContainer ul {
+   list-style-type: none;
+   padding: 0;
+}
+
+#tagPageContainer li {
+   margin-bottom: 10px;
+   padding: 15px;
+   background-color: #fff;
+   border-radius: 8px;
+   transition: background-color 0.3s ease;
+}
+
+#tagPageContainer li:hover {
+   background-color: #f5f5f5;
+}
+
+#rembut{
+   position: absolute;
+    top: 50%;
+    left: 50%;
+      -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+/* This is the class name for the rendered string */
+.answerpos
+{
+
+}
+
+#oldTag
+{
+   display: none;
+}
+
+#addTag
+{
+
+}
+
+#newTag
+{
+   display: none;
+}
+
+#newTagAbbr
+{
+   display: none;
+}
+
+.wordChoice
+{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:hover.wordChoice:not(.disabled)
+{
+    color: rgb(218,165,32);
+}
+
+.disabled:not(.correct)
+{
+    color: rgb(247, 0, 0);
+    cursor: not-allowed;
+}
+
+.correct
+{
+    color: green;
+    cursor: not-allowed;
 }
