@@ -1,0 +1,162 @@
+/* Home page styling */
+.quizList
+{
+    /* max-height: 25%; */
+    /* max-width: 25%; */
+    padding-left: auto;
+    /* padding-top: 1%; */
+    /* border: 1px black solid; */
+    height: 2.5em;
+    width: 100%;
+    /* background-color: rgba(255, 0, 0, 1); */
+    border: none;
+    min-width: 100%;
+    min-height: 100%;
+    cursor: pointer;
+    border-radius: 5%;
+    text-align: center;
+    line-height: 100%;
+    font-size: 120%;
+}
+
+.quizList:hover {
+    background-color: rgb(191, 191, 191); 
+ }
+
+.quizOption
+{
+    padding-top: .5em;
+    padding-bottom: .5em;
+}
+
+/* Quiz/question styling */
+
+#qTextWrapper
+{
+    color: black;
+    font-size: 3.5vh;
+}
+
+.wordChoice
+{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:hover.wordChoice:not(.disabled)
+{
+    color: rgb(218,165,32);
+}
+
+.disabled
+{
+    color: gray;
+    cursor: not-allowed;
+}
+
+#attemptSection
+{
+    text-align: right;
+    display: inline-block;
+}
+
+#explanationSection .giveupButton
+{
+    visibility: hidden;
+}
+
+#submitButton
+{
+    padding-left: auto;
+    height: 2.5em;
+    width: 100%;
+    border: none;
+    min-width: 50%;
+    min-height: 50%;
+    cursor: pointer;
+    border-radius: 5%;
+    text-align: center;
+    line-height: 100%;
+    font-size: 120%;
+}
+
+/* .submitButton:hover {
+    background-color: #0056b3;
+} */
+
+
+/* Results styling */
+tr:nth-child(even)
+{
+    background-color: lightgray;
+}
+
+table, td, th
+{
+    text-align: center;
+    border: .5px black solid;
+}
+
+td, th
+{
+    padding: 0 .5vw 0 .5vw;
+}
+
+table
+{
+    display: block;
+    border-collapse: collapse;
+    max-width: 50vw;
+    max-height: 50vh;
+    overflow: auto;
+}
+
+/* Error handling styling */
+#errSection
+{
+    min-height: 30%;
+    min-width: 30%;
+    max-height: 30%;
+    max-width: 30%;
+    background-color: rgb(241, 179, 0);
+    border-radius: 2%;
+}
+
+.selectedButton
+{
+    background-color: grey;
+
+}
+
+.correctQuestion
+{
+    background-color: lightgreen;
+
+}
+
+.questionRefButton
+{
+    width: 50px;
+    height: 50%;
+    margin: 5px;
+}
+
+.navButton
+{
+    padding-left: auto;
+    height: 2.5em;
+    width: 100%;
+    border: none;
+    min-width: 50%;
+    min-height: 50%;
+    cursor: pointer;
+    border-radius: 5%;
+    text-align: center;
+    line-height: 100%;
+    font-size: 120%;
+    margin-bottom: 10px;
+}
+
+.navButton:hover {
+    background-color: rgb(191, 191, 191); 
+ }
