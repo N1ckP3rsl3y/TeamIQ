@@ -5,7 +5,7 @@
         $server = "mysql.ac.nau.edu";
         $database = "redpenweb";
         $user = "redpenweb";
-        $password = "teamiq2023!?";
+        $password = ""; // Left blank on purpose - update locallly when using
 
         return mysqli_connect($server, $user, $password, $database);
     }
