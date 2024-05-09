@@ -1,6 +1,6 @@
 # TeamIQ
 
-**Version:** v0.1.0 (alpha-demo)
+**Version:** v1.0.0
 
 # RedPen
 ## Overview
@@ -35,4 +35,18 @@ See the current state of the [project](https://ac.nau.edu/redpen/index.html).
 Versioning will follow the semantic versioning convention outlined in [SemVar](http://semver.org/).
 
 ## Testing
-Coming soon...
+* Unit Tests
+    - A basic test was conducted using PHPUnit to test user authentication on the NAU CEIAS server
+
+* Integration Testing
+    - Bottom-up approach
+    - Checked that the PHP functions connected to the database operated properly and recieved the right values
+    - Tested PHP functions and JavaScript functions with dummy variables and sometimes a temporary database
+    - Tested any functions a level above that that call the php and javascript functions
+
+* User Testing
+    - As the program production started to wind down, the following methods took place to have user experience testing:
+        1. Our sponsor, Dr. Konrad gave out the link to her students and had them try to break the website
+        2. Some members of the team also gathered a couple people each of their own accord to have students try the website and attempt to break it
+
+    - A special thank you to all that took time out of their day to help!

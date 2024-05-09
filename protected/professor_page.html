@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../professor.css">
+        <link rel="stylesheet" href="../styles.css">
+        <title>Red Pen</title>
+        <script defer src="handle_quizzes.js"></script>
+        <script src="https://code.jquery.com/jquery-latest.js"></script>
+    </head>
+    <body>
+         <!-- Header Section -->
+         <header class="fixed-header">
+            <a href="professor.php">
+                <img src="../photos/nau.png" alt="NAU Logo" width="200" height="125">
+            </a>
+            <img src="../photos/Red Pen.png" alt="Red Pen Logo" width="425" height="125">
+            <nav>
+                <ul>
+                    <li><a href="professor.php">Home</a></li>
+                    <li><a href="professor_quiz_list.php">View Quizzes</a></li>
+                    <!-- <li><a href="quizEditor.php">Quiz Editor</a></li> -->
+                    <li><a href="professor_page.html">Professor Page</a></li>
+                </ul>
+            </nav>
+            </header>
+
+         <!-- Main Section -->
+         <main>
+               <div class="header">
+                   <div class="title-box">Professor</div>
+                   <button onclick = "createNewSemester()" class="alumn"> New Semester </button>
+                   <button onclick = "moveStudent()" class="alumn"> Move Student </button>
+               </div>
+               <div class="content">
+                   <a href="quizzes.php" class="box">Quizzes</a>
+                   <a href="student_result_pg.php" class="box">Results</a>
+                   <a href="tags.php" class="box">Tags</a>
+               </div>
+        </main>
+
+         <!-- Footer Section -->
+         <footer>
+               <p>Red Pen</p>
+               <p>&copy; 2024</p>
+         </footer>
+
+
+    </body>
+</html>
